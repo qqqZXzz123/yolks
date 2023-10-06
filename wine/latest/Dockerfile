@@ -17,6 +17,7 @@ RUN             wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.o
 RUN             wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bullseye/winehq-bullseye.sources
 RUN             apt update
 RUN             apt install --install-recommends winehq-stable cabextract wine-binfmt -y
+RUN             apt install -y curl lib32gcc-s1 ca-certificates xterm expect
 
 # Set up Winetricks
 RUN	            wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
